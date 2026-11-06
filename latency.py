@@ -37,7 +37,8 @@ ROUTERS = [
     {"id": "KDUS-IDC-F", "normal": "8", "name": "JT-KDS-01-P1-KDUS <> JK-KYB-140-SC2-IDCD3", "desc": "Eth-Trunk0_1X400G", "mgmt_ip": "10.109.6.13", "peer_ip": "10.133.35.65"},
     {"id": "JMBR-KTTG", "normal": "3", "name": "JI-JMR-01-P2-JMBR <> JI-SBY-02-P3-KTTG", "desc": "2x100G_UAJB", "mgmt_ip": "10.109.6.19", "peer_ip": "10.132.22.117"},
     {"id": "IDC-CRB-F", "normal": "3", "name": "JK-KYB-140-SC2-IDCD3 <> JB-CBN-02-P2-CRBKT", "desc": "1X400G", "mgmt_ip": "10.109.6.2", "peer_ip": "10.133.35.50"},
-    {"id": "IDC-OMDT-F", "normal": "11", "name": "JK-KYB-140-SC2-IDCD3 <> JI-SBY-01-P2-OMDT", "desc": "1X400G", "mgmt_ip": "10.109.6.2", "peer_ip": "10.133.35.173"},
+    {"id": "IDC-P1OMDT-F", "normal": "11", "name": "JK-KYB-140-SC1-IDCD3 <> JI-SBY-01-P1-OMDT", "desc": "1X400G", "mgmt_ip": "10.109.6.1", "peer_ip": "10.133.35.82"},
+    {"id": "IDC-P2OMDT-F", "normal": "11", "name": "JK-KYB-140-SC2-IDCD3 <> JI-SBY-01-P2-OMDT", "desc": "1X400G", "mgmt_ip": "10.109.6.2", "peer_ip": "10.133.35.173"},
     {"id": "IDC-KTTG-F", "normal": "11", "name": "JK-KYB-140-SC2-IDCD3 <> JI-SBY-02-P3-KTTG", "desc": "2x400G_UAJB-F", "mgmt_ip": "10.109.6.2", "peer_ip": "10.133.35.74"},
     {"id": "KTTG-CYB2", "normal": "12", "name": "JI-SBY-02-P3-KTTG <> JK-JKT-02-P1-CYB2", "desc": "10x10G_UAJB", "mgmt_ip": "10.109.6.24", "peer_ip": "10.132.23.49"},
     {"id": "KTTG-KNYN", "normal": "3", "name": "JI-SBY-02-P3-KTTG <> JI-TLG-01-PE2-KNYN", "desc": "2x100G_UAJB", "mgmt_ip": "10.109.6.24", "peer_ip": "10.133.29.33"},
@@ -441,7 +442,7 @@ def update_dashboard(n, timeframe_minutes, selected_group):
     group_mapping = {
         '3RD-PARTY': ['MDN-BTM', 'PBR-DMAI', 'PLG-JKT', 'PBR-MDN', 'BDL-JKT1', 'SBY-MKS', 'SBY-BJM', 'MDN-BTM2', 'MDN-PKB'],
         'UNDERLAY':  ['BDL-JKT2', 'JMBR-KTTG', 'KTTG-CYB2', 'KTTG-KNYN', 'KTTG-CYB2-SC1', 'CRB-KLGR', 'CRB-BKR', 'CRB-PWT', 'CRB-CYB2', 'MLGJW-KLGRG', 'MLGJW-CYB1', 'MLG-CYB1','PDKN-CYB1','PWT-CYB1','PWT-MLGJW','PWT-GRUT'],
-        'OVERLAY':   ['KDUS-IDC-F', 'IDC-CRB-F', 'IDC-OMDT-F', 'IDC-KTTG-F', 'KTTG-IDC-SC2-F', 'MLGJW-CYB1-F','JMBG-CYB1-F','PDKN-CYB1-F','MDUN-CYB1-F','CMHI-CYB1-F','PWT-CYB1-F','KLGRG-CYB2','DRCKG-IDC-F']
+        'OVERLAY':   ['KDUS-IDC-F', 'IDC-CRB-F', 'IDC-P1OMDT-F', 'IDC-P2OMDT-F', 'IDC-KTTG-F', 'KTTG-IDC-SC2-F', 'MLGJW-CYB1-F','JMBG-CYB1-F','PDKN-CYB1-F','MDUN-CYB1-F','CMHI-CYB1-F','PWT-CYB1-F','KLGRG-CYB2','DRCKG-IDC-F']
     }
     
     allowed_ids = group_mapping.get(selected_group, [])
