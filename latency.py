@@ -27,6 +27,8 @@ DB_FILE = os.path.join(BASE_DIR, "latency_monitor.db")
 
 ROUTERS = [
     {"id": "MDN-BTM", "normal": "12", "name": "SU-MDN-08-PE1-NIXMD <> KR-BTM-02-PE1-TJBBN", "desc": "ETH-TRUNK2_1X100G_via-MORA-CID: 1288741800174851", "mgmt_ip": "10.109.3.244", "peer_ip": "10.133.29.74"},
+    {"id": "MDN-BTM-DMI1", "normal": "10", "name": "SU-MDN-08-PE1-NIXMD <> KR-BTM-05-PE1-TBBN2", "desc": "2x100G_DAMAI_301026", "mgmt_ip": "10.109.3.244", "peer_ip": "10.132.34.194"},
+    {"id": "MDN-BTM-DMI2", "normal": "10", "name": "SU-MDN-08-PE2-NIXMD <> KR-BTM-05-PE2-TBBN2", "desc": "2x100G_DAMAI_301026", "mgmt_ip": "10.109.13.7", "peer_ip": "10.132.34.198"},
     {"id": "PBR-DMAI", "normal": "4", "name": "RI-PBR-04-PE1-SNPLN <> RI-DUM-01-PE1-DMAI", "desc": "20G_MORATEL_CID:1288740400068289", "mgmt_ip": "10.109.14.6", "peer_ip": "10.132.34.142"},
     {"id": "PLG-JKT", "normal": "8", "name": "SS-PLG-08-PE1-NIXPG <> JK-CKG-04-PE2-NDCJN", "desc": "ETH3_1X100G_via_MORATEL-CID:1288741800177138", "mgmt_ip": "10.109.3.24", "peer_ip": "10.132.34.73"},
     {"id": "PBR-MDN", "normal": "10", "name": "RI-PBR-04-PE1-SNPLN <> SU-MDN-08-PE1-NIXMD", "desc": "Eth7_1x20G_via_MORATEL-CID1288741800176256", "mgmt_ip": "10.109.14.6", "peer_ip": "10.132.34.54"},
@@ -441,7 +443,7 @@ def update_dashboard(n, timeframe_minutes, selected_group):
     # 2. Filter Grouping
     group_mapping = {
         '3RD-PARTY': ['MDN-BTM', 'PBR-DMAI', 'PLG-JKT', 'PBR-MDN', 'BDL-JKT1', 'SBY-MKS', 'SBY-BJM', 'MDN-BTM2', 'MDN-PKB'],
-        'UNDERLAY':  ['BDL-JKT2', 'JMBR-KTTG', 'KTTG-CYB2', 'KTTG-KNYN', 'KTTG-CYB2-SC1', 'CRB-KLGR', 'CRB-BKR', 'CRB-PWT', 'CRB-CYB2', 'MLGJW-KLGRG', 'MLGJW-CYB1', 'MLG-CYB1','PDKN-CYB1','PWT-CYB1','PWT-MLGJW','PWT-GRUT'],
+        'UNDERLAY':  ['MDN-BTM-DMI1', 'MDN-BTM-DMI2', 'BDL-JKT2', 'JMBR-KTTG', 'KTTG-CYB2', 'KTTG-KNYN', 'KTTG-CYB2-SC1', 'CRB-KLGR', 'CRB-BKR', 'CRB-PWT', 'CRB-CYB2', 'MLGJW-KLGRG', 'MLGJW-CYB1', 'MLG-CYB1','PDKN-CYB1','PWT-CYB1','PWT-MLGJW','PWT-GRUT'],
         'OVERLAY':   ['KDUS-IDC-F', 'IDC-CRB-F', 'IDC-P1OMDT-F', 'IDC-P2OMDT-F', 'IDC-KTTG-F', 'KTTG-IDC-SC2-F', 'MLGJW-CYB1-F','JMBG-CYB1-F','PDKN-CYB1-F','MDUN-CYB1-F','CMHI-CYB1-F','PWT-CYB1-F','KLGRG-CYB2','DRCKG-IDC-F']
     }
     
